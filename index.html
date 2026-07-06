@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8" />
+
+     <!-- Makes the app scale correctly on iPad and phones -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+     <!-- Helps the app feel more app-like when later saved to the iPad home screen -->
+     <meta name="apple-mobile-web-app-capable" content="yes" />
+     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+     <title>Fridge Chores</title>
+
+     <!-- Framework7 CSS from CDN -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/framework7@9.1.0/framework7-bundle.min.css" />
+
+     <!-- Our custom app styles -->
+     <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+     <!-- Framework7 app root -->
+     <div id="app">
+          <!-- Main app view -->
+          <div class="view view-main view-init safe-areas" data-url="/">
+               <div class="page" data-name="home">
+
+                    <!-- Top navigation bar -->
+
+
+                    <!-- Main page content -->
+                    <div class="page-content">
+                         <main class="fridge-shell">
+
+                              <!-- Header card -->
+                              <section class="hero-card">
+                                   <div>
+                                        <p class="eyebrow">Household Dashboard</p>
+                                        <h1>Today’s Chores</h1>
+
+                                   </div>
+
+                                   <div class="date-card">
+                                        <div id="currentDay" class="current-day">Loading day...</div>
+                                        <div id="currentDate" class="current-date">Loading date...</div>
+                                        <div id="currentTime" class="current-time">Loading time...</div>
+                                   </div>
+                              </section>
+
+                              <!-- Dashboard is rendered by app.js -->
+                              <div id="dashboard" class="dashboard"></div>
+
+                         </main>
+                    </div>
+
+               </div>
+          </div>
+
+          <!-- Settings / Data Tools Popup -->
+          <div class="popup settings-popup" id="settingsPopup">
+               <div class="view">
+                    <div class="page">
+
+                         <div class="navbar no-hairline">
+                              <div class="navbar-bg"></div>
+
+                              <div class="navbar-inner">
+                                   <div class="title">Settings</div>
+
+                                   <div class="right">
+                                        <a href="#" class="link popup-close settings-close-link">Done</a>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <div class="page-content settings-page-content">
+                              <main class="settings-shell">
+
+                                   <section class="settings-hero">
+                                        <p class="eyebrow">Data Tools</p>
+                                        <h1>Settings & Maintenance</h1>
+                                        <p>
+                                             These tools are for backup, transfer, troubleshooting, and starting fresh.
+                                             Your daily chore dashboard stays clean and touch-focused.
+                                        </p>
+                                   </section>
+
+                                   <section class="settings-card">
+                                        <h2>Reset Progress</h2>
+                                        <p class="settings-help">
+                                             This clears all saved chore progress and sets every chore back to due for
+                                             the current day, week, or month.
+                                        </p>
+
+                                        <button id="resetAllButton" type="button" class="tool-button danger-button">
+                                             Reset All Progress
+                                        </button>
+                                   </section>
+
+                                   <section class="settings-card">
+                                        <h2>Export Progress</h2>
+                                        <p class="settings-help">
+                                             Copy this JSON text or download it as a backup file. This can be imported
+                                             later on the same iPad or another browser.
+                                        </p>
+
+                                        <div class="settings-button-row">
+                                             <button id="refreshExportButton" type="button"
+                                                  class="tool-button secondary-button">
+                                                  Refresh JSON
+                                             </button>
+
+                                             <button id="downloadExportButton" type="button"
+                                                  class="tool-button primary-button">
+                                                  Download JSON File
+                                             </button>
+                                        </div>
+
+                                        <textarea id="exportTextArea" class="settings-textarea" readonly
+                                             spellcheck="false" aria-label="Exported chore progress JSON"></textarea>
+                                   </section>
+
+                                   <section class="settings-card">
+                                        <h2>Import Progress</h2>
+                                        <p class="settings-help">
+                                             Paste previously exported JSON here, then import it. Importing replaces the
+                                             currently saved progress.
+                                        </p>
+
+                                        <textarea id="importTextArea" class="settings-textarea" spellcheck="false"
+                                             placeholder="Paste exported JSON here..."
+                                             aria-label="Import chore progress JSON"></textarea>
+
+                                        <button id="importButton" type="button" class="tool-button primary-button">
+                                             Import JSON
+                                        </button>
+                                   </section>
+
+                                   <section class="settings-card">
+                                        <h2>Debug State</h2>
+                                        <p class="settings-help">
+                                             This shows the raw saved state that the app is using internally. It is
+                                             helpful when testing resets and imports.
+                                        </p>
+
+                                        <button id="toggleDebugButton" type="button"
+                                             class="tool-button secondary-button">
+                                             Show Raw State
+                                        </button>
+
+                                        <pre id="debugStateOutput" class="debug-state-output is-hidden"></pre>
+                                   </section>
+
+                              </main>
+                         </div>
+
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <!-- Framework7 JavaScript from CDN -->
+     <script src="https://cdn.jsdelivr.net/npm/framework7@9.1.0/framework7-bundle.min.js"></script>
+
+     <!-- Our custom app logic -->
+     <script src="app.js"></script>
+</body>
+
+</html>
