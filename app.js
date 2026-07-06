@@ -136,7 +136,13 @@ const CHORES = [
        frequency: "daily",
        requiredCount: 1
      },
-   
+     {
+      id: "aquarium",
+      label: "Aquarium",
+      iconPath: "assets/fishbowl.png",
+      frequency: "daily",
+      requiredCount: 1
+    },
      // Weekly chores
      {
        id: "laundry",
@@ -152,13 +158,7 @@ const CHORES = [
        frequency: "weekly",
        requiredCount: 2
      },
-     {
-       id: "aquarium",
-       label: "Aquarium",
-       iconPath: "assets/fishbowl.png",
-       frequency: "weekly",
-       requiredCount: 3
-     },
+
      {
        id: "mail",
        label: "Mail",
@@ -182,8 +182,15 @@ const CHORES = [
        requiredCount: 1
      },
      {
+      id: "flower",
+      label: "Flower",
+      iconPath: "assets/marijuana.png",
+      frequency: "weekly",
+      requiredCount: 2
+    },
+     {
        id: "rug-vacuum",
-       label: "Vacuum Rugs",
+       label: "Vacuum",
        iconPath: "assets/vacuum-cleaner.png",
        frequency: "weekly",
        requiredCount: 2
