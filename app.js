@@ -136,13 +136,7 @@ const CHORES = [
        frequency: "daily",
        requiredCount: 1
      },
-     {
-      id: "aquarium",
-      label: "Aquarium",
-      iconPath: "assets/fishbowl.png",
-      frequency: "daily",
-      requiredCount: 1
-    },
+
      // Weekly chores
      {
        id: "laundry",
@@ -226,6 +220,13 @@ const CHORES = [
      frequency: "monthly",
      requiredCount: 1
    },
+   {
+    id: "aquarium",
+    label: "Aquarium",
+    iconPath: "assets/fishbowl.png",
+    frequency: "monthly",
+    requiredCount: 2
+  },
    {
      id: "shower",
      label: "Shower",
